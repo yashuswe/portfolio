@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "wouter";
+import { queryClient } from "./lib/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { LoadingAnimation } from "./components/ui/loading-animation";
+import { Toaster } from "./components/ui/toaster";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { useState } from "react";
+import Home from "./pages/home";
+import NotFound from "./pages/not-found";
+import { ThemeProvider } from "./components/theme-provider";
+
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
 
 function App() {
+  const [showLoading, setShowLoading] = useState(false); // Temporarily disabled
+
+  const handleLoadingComplete = () => {
+    setShowLoading(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+        <TooltipProvider>
+          <Toaster />
+          {showLoading ? (
+            <LoadingAnimation onComplete={handleLoadingComplete} />
+          ) : (
+            <Router />
+          )}
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 
