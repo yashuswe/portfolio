@@ -1,22 +1,8 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card, CardContent } from "../ui/card"
-import { Button } from "../ui/button"
-import { MapPin, Music, ExternalLink } from "lucide-react"
+import { MapPin } from "lucide-react"
 import personalPhoto from "../../assets/personal-picture.jpeg"
-
-const musicArtists = [
-  {
-    name: "Kenny Dorham",
-    url: "https://music.apple.com/in/artist/kenny-dorham/298282",
-    genre: "Jazz Trumpet"
-  },
-  {
-    name: "Frank Sinatra", 
-    url: "https://music.apple.com/in/artist/frank-sinatra/171366",
-    genre: "Classic Jazz"
-  }
-]
 
 export default function Personal() {
   const ref = useRef(null)
@@ -24,9 +10,8 @@ export default function Personal() {
 
   return (
     <section id="personal" className="py-20 px-4 relative overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-      
+
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
