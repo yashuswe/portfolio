@@ -19,7 +19,7 @@ function Router() {
 }
 
 function App() {
-  const [showLoading, setShowLoading] = useState(false); // Temporarily disabled
+  const [showLoading, setShowLoading] = useState(true); 
 
   const handleLoadingComplete = () => {
     setShowLoading(false);
