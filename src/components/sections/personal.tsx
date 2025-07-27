@@ -81,64 +81,6 @@ export default function Personal() {
             </CardContent>
           </Card>
         </motion.div>
-
-        {/* Music Interests */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Music className="w-6 h-6 text-gray-400" />
-              <h4 className="text-2xl font-bold text-white">Music I Love</h4>
-            </div>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Jazz has always been a source of inspiration, bringing creativity and rhythm to my development process
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {musicArtists.map((artist, index) => (
-              <motion.div
-                key={artist.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                transition={{ duration: 0.6, delay: 0.8 + (index * 0.2) }}
-              >
-                <Card className="bg-black/30 backdrop-blur-md border border-gray-800/50 overflow-hidden group hover:bg-black/50 transition-all duration-500">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <h5 className="text-xl font-semibold text-white mb-2">
-                        {artist.name}
-                      </h5>
-                      <p className="text-gray-400 mb-4 text-sm">
-                        {artist.genre}
-                      </p>
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="bg-transparent border-gray-600 text-white hover:bg-white hover:text-black transition-all duration-300"
-                      >
-                        <a
-                          href={artist.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2"
-                        >
-                          <Music className="w-4 h-4" />
-                          Listen on Apple Music
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   )

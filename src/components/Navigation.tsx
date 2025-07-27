@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Moon, Sun, Menu, X, Download } from "lucide-react"
 import { Button } from "./ui/button"
 import { useTheme } from "./theme-provider"
+import resumePdf from "../assets/Yashassvi Suhane (1).pdf"
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -33,14 +34,33 @@ export function Navigation() {
   }
 
   const handleDownloadResume = () => {
-    // In a real implementation, this would trigger a download
-    window.open("#", "_blank")
+    try {
+      // Create a link element to trigger the download
+      const link = document.createElement('a')
+      link.href = resumePdf
+      link.download = "Yashassvi_Suhane_Resume.pdf"
+      link.target = "_blank"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } catch (error) {
+      console.error('Error downloading resume:', error)
+      // Fallback: open in new tab
+      window.open(resumePdf, '_blank')
+    }
   }
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      // Account for fixed navigation height (64px = h-16)
+      const navHeight = 64
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      })
     }
     setIsMobileMenuOpen(false)
   }
