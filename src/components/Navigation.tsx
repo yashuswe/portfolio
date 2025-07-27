@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Moon, Sun, Menu, X, Download } from "lucide-react"
+import { Menu, X, Download } from "lucide-react"
 import { Button } from "./ui/button"
 import { useTheme } from "./theme-provider"
 import resumePdf from "../assets/Yashassvi Suhane (1).pdf"
@@ -102,17 +102,6 @@ export function Navigation() {
 
             {/* Actions */}
             <div className="flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="rounded-full"
-              >
-                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-
               <Button
                 onClick={handleDownloadResume}
                 className="hidden sm:flex items-center gap-2"
