@@ -8,6 +8,7 @@ import resumePdf from "../assets/Yashassvi Suhane (1).pdf"
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#value", label: "Value" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
@@ -78,14 +79,6 @@ export function Navigation() {
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center"
-            >
-              <span className="text-2xl font-bold gradient-text">YS</span>
-            </motion.div>
-
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (

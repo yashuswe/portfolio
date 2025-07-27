@@ -2,6 +2,7 @@ import { Navigation } from "../components/Navigation"
 import { HeroSection } from "../components/sections/hero"
 import { TechScroll } from "../components/ui/tech-scroll"
 import { SkillsSection } from "../components/sections/skills"
+import { ValuePropositionSection } from "../components/sections/value-proposition"
 import { ExperienceSection } from "../components/sections/experience"
 import { ProjectsSection } from "../components/sections/projects"
 import { EducationSection } from "../components/sections/education"
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <TechScroll />
         <SkillsSection />
+        <ValuePropositionSection />
         <ExperienceSection />
         <ProjectsSection />
         <EducationSection />
