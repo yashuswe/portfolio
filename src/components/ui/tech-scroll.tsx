@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const technologies = [
   { name: "JavaScript", icon: "JS" },
@@ -22,13 +22,13 @@ const technologies = [
   { name: "Redux", icon: "🔄" },
   { name: "Zustand", icon: "🐻" },
   { name: "Prisma", icon: "💎" },
-]
+];
 
 // Duplicate the array to create seamless loop
-const duplicatedTech = [...technologies, ...technologies]
+const duplicatedTech = [...technologies, ...technologies];
 
 export function TechScroll() {
-  const [isPaused, setIsPaused] = useState(false)
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <div className="w-full overflow-hidden bg-muted/20 py-8 border-y border-border/30">
@@ -38,7 +38,7 @@ export function TechScroll() {
         transition={{
           duration: 30,
           repeat: Infinity,
-          ease: "linear"
+          ease: "linear",
         }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -59,5 +59,5 @@ export function TechScroll() {
         ))}
       </motion.div>
     </div>
-  )
+  );
 }

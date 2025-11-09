@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Download } from "lucide-react"
-import { Button } from "./ui/button"
-import { useTheme } from "./theme-provider"
-import resumePdf from "../assets/Yashassvi Suhane (1).pdf"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Download } from "lucide-react";
+import { Button } from "./ui/button";
+import { useTheme } from "./theme-provider";
+import resumePdf from "../assets/Yashassvi Suhane (1).pdf";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -14,57 +14,58 @@ const navItems = [
   { href: "#education", label: "Education" },
   { href: "#personal", label: "Personal" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const handleDownloadResume = () => {
     try {
       // Create a link element to trigger the download
-      const link = document.createElement('a')
-      link.href = resumePdf
-      link.download = "Yashassvi_Suhane_Resume.pdf"
-      link.target = "_blank"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+      const link = document.createElement("a");
+      link.href = resumePdf;
+      link.download = "Yashassvi_Suhane_Resume.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
-      console.error('Error downloading resume:', error)
+      console.error("Error downloading resume:", error);
       // Fallback: open in new tab
-      window.open(resumePdf, '_blank')
+      window.open(resumePdf, "_blank");
     }
-  }
+  };
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
       // Account for fixed navigation height (64px = h-16)
-      const navHeight = 64
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight
-      
+      const navHeight = 64;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
       window.scrollTo({
         top: elementPosition,
-        behavior: "smooth"
-      })
+        behavior: "smooth",
+      });
     }
-    setIsMobileMenuOpen(false)
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -157,5 +158,5 @@ export function Navigation() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

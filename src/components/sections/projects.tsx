@@ -1,123 +1,165 @@
-import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion"
-import { useRef, useState } from "react"
-import { Card, CardContent } from "../ui/card"
-import { Badge } from "../ui/badge"
-import { Button } from "../ui/button"
-import { ExternalLink, Github, Eye, Code, Zap, Users, TrendingUp } from "lucide-react"
-import fukuryouScreenshot from "../../assets/fukuryou.png"
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  useSpring,
+} from "framer-motion";
+import { useRef, useState } from "react";
+import { Card, CardContent } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import {
+  ExternalLink,
+  Github,
+  Eye,
+  Code,
+  Zap,
+  Users,
+  TrendingUp,
+} from "lucide-react";
+import fukuryouScreenshot from "../../assets/fukuryou.png";
 
 const projects = [
   {
     title: "PDF Editing SaaS Platform",
-    description: "Building a modern PDF editing SaaS from the ground up as Designer & Front-End Engineer. Architecting modular, block-based interface with intuitive UX and powerful editing capabilities.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["React", "TypeScript", "SaaS", "UI/UX Design", "Freelance", "Current"],
+    description:
+      "Building a modern PDF editing SaaS from the ground up as Designer & Front-End Engineer. Architecting modular, block-based interface with intuitive UX and powerful editing capabilities.",
+    image:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    tags: [
+      "React",
+      "TypeScript",
+      "SaaS",
+      "UI/UX Design",
+      "Freelance",
+      "Current",
+    ],
     links: {
-      demo: "#"
+      demo: "#",
     },
     stats: {
       users: "In Development",
       performance: "SaaS",
-      retention: "Ongoing"
+      retention: "Ongoing",
     },
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
-    badge: "Current Project"
+    isCurrent: true,
   },
   {
     title: "Brokerbuk Admin Panel",
-    description: "Deployed new React/TypeScript admin dashboard for real estate management, reducing admin processing time by 20%. Streamlined property listings, user management, and operations.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    description:
+      "Deployed new React/TypeScript admin dashboard for real estate management, reducing admin processing time by 20%. Streamlined property listings, user management, and operations.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["React", "NestJS", "Admin Dashboard", "PropTech", "Real Estate"],
     links: {
-      demo: "https://www.squareboat.com/clients/brokerbuk"
+      demo: "https://www.squareboat.com/clients/brokerbuk",
     },
     stats: {
       users: "Admin Teams",
       performance: "20%",
-      retention: "Streamlined"
+      retention: "Streamlined",
     },
     color: "text-blue-500",
-    bgColor: "bg-blue-500/10"
+    bgColor: "bg-blue-500/10",
   },
   {
     title: "Fukuryou Real Estate Platform",
-    description: "Led UI overhaul resulting in 40% uplift in user retention and satisfaction. Built entire website from scratch with modern Japanese UI design and full functionality.",
+    description:
+      "Led UI overhaul resulting in 40% uplift in user retention and satisfaction. Built entire website from scratch with modern Japanese UI design and full functionality.",
     image: fukuryouScreenshot,
     tags: ["React", "SCSS", "Real Estate", "Japanese UI", "Full Stack"],
     links: {
-      demo: "https://fukuryou.com/"
+      demo: "https://fukuryou.com/",
     },
     stats: {
       users: "50K+",
       performance: "Built 100%",
-      retention: "40% Uplift"
+      retention: "40% Uplift",
     },
     color: "text-green-500",
-    bgColor: "bg-green-500/10"
+    bgColor: "bg-green-500/10",
   },
   {
     title: "Radiology Platform — Singapore NMH Hospital",
-    description: "Designed and delivered diagnostic UI features enhancing workflow efficiency for medical professionals. Streamlined medical data handling for healthcare system.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    description:
+      "Designed and delivered diagnostic UI features enhancing workflow efficiency for medical professionals. Streamlined medical data handling for healthcare system.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["Django", "Healthcare", "SCSS", "Medical UI", "Hospital System"],
     links: {
-      demo: "#"
+      demo: "#",
     },
     stats: {
       users: "1M+ Patients",
       performance: "Workflow",
-      retention: "Enhanced"
+      retention: "Enhanced",
     },
     color: "text-purple-500",
-    bgColor: "bg-purple-500/10"
+    bgColor: "bg-purple-500/10",
   },
   {
     title: "Cedarwood Educational Platform",
-    description: "Developed key features for educational platform including student performance tracking and progress monitoring. Raised student engagement metrics by 20%.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["Next.js", "React Query", "TypeScript", "Education", "Progress Tracking"],
+    description:
+      "Developed key features for educational platform including student performance tracking and progress monitoring. Raised student engagement metrics by 20%.",
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    tags: [
+      "Next.js",
+      "React Query",
+      "TypeScript",
+      "Education",
+      "Progress Tracking",
+    ],
     links: {
-      demo: "https://cedarwood.co.in/"
+      demo: "https://cedarwood.co.in/",
     },
     stats: {
       users: "10K+ Students",
       performance: "20%",
-      retention: "Engagement"
+      retention: "Engagement",
     },
     color: "text-orange-500",
-    bgColor: "bg-orange-500/10"
-  }
-]
+    bgColor: "bg-orange-500/10",
+  },
+];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [isHovered, setIsHovered] = useState(false)
-  
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-  
-  const rotateX = useTransform(mouseY, [-100, 100], [15, -15])
-  const rotateY = useTransform(mouseX, [-100, 100], [-15, 15])
-  
-  const springConfig = { damping: 20, stiffness: 300 }
-  const springRotateX = useSpring(rotateX, springConfig)
-  const springRotateY = useSpring(rotateY, springConfig)
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useTransform(mouseY, [-100, 100], [15, -15]);
+  const rotateY = useTransform(mouseX, [-100, 100], [-15, 15]);
+
+  const springConfig = { damping: 20, stiffness: 300 };
+  const springRotateX = useSpring(rotateX, springConfig);
+  const springRotateY = useSpring(rotateY, springConfig);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isHovered) return
-    
-    const rect = e.currentTarget.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    
-    const x = (e.clientX - centerX) / 50
-    const y = (e.clientY - centerY) / 50
-    
-    mouseX.set(x)
-    mouseY.set(y)
-  }
+    if (!isHovered) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const x = (e.clientX - centerX) / 50;
+    const y = (e.clientY - centerY) / 50;
+
+    mouseX.set(x);
+    mouseY.set(y);
+  };
 
   return (
     <motion.div
@@ -128,14 +170,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
-        setIsHovered(false)
-        mouseX.set(0)
-        mouseY.set(0)
+        setIsHovered(false);
+        mouseX.set(0);
+        mouseY.set(0);
       }}
       style={{
         rotateX: springRotateX,
         rotateY: springRotateY,
-        transformStyle: "preserve-3d"
+        transformStyle: "preserve-3d",
       }}
       className="perspective-1000"
     >
@@ -145,7 +187,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           initial={{ scale: 0.8 }}
           whileHover={{ scale: 1 }}
         />
-        
+
         <div className="relative overflow-hidden">
           <motion.img
             src={project.image}
@@ -154,20 +196,21 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             whileHover={{ scale: 1.05 }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           {/* Current Project Badge */}
-          {project.badge && (
+          {project.isCurrent && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
               className="absolute top-3 left-3 z-10"
             >
-              <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 shadow-lg">
-                {project.badge}
+              <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 shadow-lg px-3 py-1 text-xs font-semibold">
+                🚀 Current Project
               </Badge>
             </motion.div>
           )}
-          
+
           {/* Project Stats Overlay */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -177,27 +220,33 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             <div className="grid grid-cols-3 gap-2">
               <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-600">Users</div>
-                <div className="text-sm font-bold text-black">{project.stats.users}</div>
+                <div className="text-sm font-bold text-black">
+                  {project.stats.users}
+                </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-600">Performance</div>
-                <div className="text-sm font-bold text-black">{project.stats.performance}</div>
+                <div className="text-sm font-bold text-black">
+                  {project.stats.performance}
+                </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-600">Retention</div>
-                <div className="text-sm font-bold text-black">{project.stats.retention}</div>
+                <div className="text-sm font-bold text-black">
+                  {project.stats.retention}
+                </div>
               </div>
             </div>
           </motion.div>
-          
+
           {/* Hover overlay with links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileHover={{ opacity: 1, y: 0 }}
             className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            {project.badge === "Current Project" ? (
-              <Badge className="backdrop-blur-sm bg-white/90 text-black border-0 px-4 py-2 text-sm font-semibold">
+            {project.isCurrent ? (
+              <Badge className="backdrop-blur-sm bg-white/90 text-black border-0 px-6 py-3 text-base font-semibold shadow-lg">
                 🚧 In Development
               </Badge>
             ) : (
@@ -211,21 +260,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                     size="sm"
                     variant="secondary"
                     className="backdrop-blur-sm bg-white/90 text-black hover:bg-white"
-                    onClick={() => window.open(url, '_blank')}
+                    onClick={() => window.open(url, "_blank")}
                   >
-                    {key === 'github' ? (
+                    {key === "github" ? (
                       <Github className="h-4 w-4 mr-2" />
                     ) : (
                       <ExternalLink className="h-4 w-4 mr-2" />
                     )}
-                    {key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}
+                    {key.charAt(0).toUpperCase() +
+                      key.slice(1).replace("_", " ")}
                   </Button>
                 </motion.div>
               ))
             )}
           </motion.div>
         </div>
-        
+
         <CardContent className="p-6 flex-1 flex flex-col relative z-10">
           <div className="flex items-start justify-between mb-3">
             <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
@@ -239,11 +289,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               <Eye className={`w-4 h-4 ${project.color}`} />
             </motion.div>
           </div>
-          
+
           <p className="text-muted-foreground mb-4 flex-1 leading-relaxed">
             {project.description}
           </p>
-          
+
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
@@ -258,7 +308,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Project Impact Stats */}
             <div className="grid grid-cols-3 gap-3 pt-3 border-t border-border/50">
               <div className="text-center">
@@ -273,33 +323,37 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                   <Zap className="w-3 h-3" />
                   Performance
                 </div>
-                <div className="text-sm font-bold">{project.stats.performance}</div>
+                <div className="text-sm font-bold">
+                  {project.stats.performance}
+                </div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
                   <TrendingUp className="w-3 h-3" />
                   Retention
                 </div>
-                <div className="text-sm font-bold">{project.stats.retention}</div>
+                <div className="text-sm font-bold">
+                  {project.stats.retention}
+                </div>
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
     </motion.div>
-  )
+  );
 }
 
 export function ProjectsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section id="projects" className="section-padding bg-muted/30">
@@ -311,7 +365,9 @@ export function ProjectsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Featured Projects
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A showcase of my recent work and the impact I've created
           </p>
@@ -319,11 +375,7 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-            />
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
@@ -345,5 +397,5 @@ export function ProjectsSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

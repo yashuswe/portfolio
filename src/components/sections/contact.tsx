@@ -1,90 +1,103 @@
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Card, CardContent } from "../ui/card"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
-import { Textarea } from "../ui/textarea"
-import { Label } from "../ui/label"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from "lucide-react"
-import { useToast } from "../../hooks/use-toast"
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Card, CardContent } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { Label } from "../ui/label";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  ExternalLink,
+} from "lucide-react";
+import { useToast } from "../../hooks/use-toast";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
     value: "suhaneyashassvi@gmail.com",
-    href: "mailto:suhaneyashassvi@gmail.com"
+    href: "mailto:suhaneyashassvi@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+91 80815 40136",
-    href: "tel:+918081540136"
+    href: "tel:+918081540136",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Bengaluru, Karnataka, India",
-    href: "#"
-  }
-]
+    href: "#",
+  },
+];
 
 const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
     href: "#",
-    color: "hover:text-gray-900 dark:hover:text-gray-100"
+    color: "hover:text-gray-900 dark:hover:text-gray-100",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
     href: "#",
-    color: "hover:text-blue-600"
+    color: "hover:text-blue-600",
   },
   {
     icon: ExternalLink,
     label: "Portfolio",
     href: "#",
-    color: "hover:text-purple-600"
-  }
-]
+    color: "hover:text-purple-600",
+  },
+];
 
 export function ContactSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const { toast } = useToast()
-  
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
+    e.preventDefault();
+    setIsSubmitting(true);
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon.",
-    })
-    
-    setFormData({ name: "", email: "", message: "" })
-    setIsSubmitting(false)
-  }
+    });
+
+    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(false);
+  };
 
   return (
-    <section id="contact" className="section-padding bg-foreground text-background">
+    <section
+      id="contact"
+      className="section-padding bg-foreground text-background"
+    >
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -93,7 +106,9 @@ export function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">Let's Work Together</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Let's Work Together
+          </h2>
           <p className="text-xl text-background/80 max-w-2xl mx-auto">
             Ready to build something amazing? Let's discuss your next project
           </p>
@@ -115,7 +130,7 @@ export function ContactSection() {
                     key={info.label}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.4 + (index * 0.1), duration: 0.5 }}
+                    transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
                     className="flex items-center gap-4"
                   >
                     <div className="w-12 h-12 bg-background/20 rounded-full flex items-center justify-center">
@@ -123,7 +138,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <p className="text-background/70 text-sm">{info.label}</p>
-                      <a 
+                      <a
                         href={info.href}
                         className="text-lg font-medium hover:text-background/80 transition-colors"
                       >
@@ -194,7 +209,7 @@ export function ContactSection() {
                       className="h-12"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
                     <Input
@@ -208,7 +223,7 @@ export function ContactSection() {
                       className="h-12"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea
@@ -222,7 +237,7 @@ export function ContactSection() {
                       className="resize-none"
                     />
                   </div>
-                  
+
                   <Button
                     type="submit"
                     size="lg"
@@ -245,5 +260,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

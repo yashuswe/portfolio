@@ -1,98 +1,110 @@
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
-import { Badge } from "../ui/badge"
-import { 
-  Zap, 
-  Target, 
-  Users, 
-  TrendingUp, 
-  Shield, 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
+import {
+  Zap,
+  Target,
+  Users,
+  TrendingUp,
+  Shield,
   Lightbulb,
   Code,
   Rocket,
   Heart,
-  Award
-} from "lucide-react"
+  Award,
+} from "lucide-react";
 
 const valueProps = [
   {
     icon: Zap,
     title: "Performance Optimization",
-    description: "Reduced API response times by 40% and increased development velocity through strategic implementation of React Query and Zustand.",
+    description:
+      "Reduced API response times by 40% and increased development velocity through strategic implementation of React Query and Zustand.",
     color: "text-yellow-500",
     bgColor: "bg-yellow-500/10",
-    borderColor: "border-yellow-500/20"
+    borderColor: "border-yellow-500/20",
   },
   {
     icon: Target,
     title: "Quality-First Approach",
-    description: "Achieved 90%+ test coverage with Vitest and Playwright, reducing bug reports by 55% and improving release quality.",
+    description:
+      "Achieved 90%+ test coverage with Vitest and Playwright, reducing bug reports by 55% and improving release quality.",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
-    borderColor: "border-blue-500/20"
+    borderColor: "border-blue-500/20",
   },
   {
     icon: Users,
     title: "Cross-Functional Collaboration",
-    description: "Led UI rebuilds and facilitated team scaling in lean, high-velocity environments, shipping 94,000+ lines of production code.",
+    description:
+      "Led UI rebuilds and facilitated team scaling in lean, high-velocity environments, shipping 94,000+ lines of production code.",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
-    borderColor: "border-green-500/20"
+    borderColor: "border-green-500/20",
   },
   {
     icon: TrendingUp,
     title: "Scalable Solutions",
-    description: "Built healthcare platforms serving 1M+ patients and educational systems with performance tracking capabilities.",
+    description:
+      "Built healthcare platforms serving 1M+ patients and educational systems with performance tracking capabilities.",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
-    borderColor: "border-purple-500/20"
+    borderColor: "border-purple-500/20",
   },
   {
     icon: Shield,
     title: "Security & Best Practices",
-    description: "Implemented secure cascading deletion APIs and robust authorization systems using FastAPI and SQLAlchemy.",
+    description:
+      "Implemented secure cascading deletion APIs and robust authorization systems using FastAPI and SQLAlchemy.",
     color: "text-red-500",
     bgColor: "bg-red-500/10",
-    borderColor: "border-red-500/20"
+    borderColor: "border-red-500/20",
   },
   {
     icon: Lightbulb,
     title: "Innovation & Problem Solving",
-    description: "Delivered robust features and enhanced user retention by 40% through modern design patterns, automated testing, and intuitive interfaces.",
+    description:
+      "Delivered robust features and enhanced user retention by 40% through modern design patterns, automated testing, and intuitive interfaces.",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
-    borderColor: "border-orange-500/20"
-  }
-]
+    borderColor: "border-orange-500/20",
+  },
+];
 
 const highlights = [
   {
     icon: Code,
     title: "Full-Stack Expertise",
-    value: "React to FastAPI"
+    value: "React to FastAPI",
   },
   {
     icon: Rocket,
     title: "Test Coverage",
-    value: "90%+ Achieved"
+    value: "90%+ Achieved",
   },
   {
     icon: Heart,
     title: "Bug Reduction",
-    value: "55% Decrease"
+    value: "55% Decrease",
   },
   {
     icon: Award,
     title: "Code Quality",
-    value: "54K+ Lines Delivered"
-  }
-]
+    value: "54K+ Lines Delivered",
+  },
+];
 
-function ValueCard({ value, index }: { value: typeof valueProps[0]; index: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-  const IconComponent = value.icon
+function ValueCard({
+  value,
+  index,
+}: {
+  value: (typeof valueProps)[0];
+  index: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const IconComponent = value.icon;
 
   return (
     <motion.div
@@ -102,9 +114,13 @@ function ValueCard({ value, index }: { value: typeof valueProps[0]; index: numbe
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className="h-full"
     >
-      <Card className={`h-full hover:shadow-lg transition-all duration-300 group border ${value.borderColor} hover:border-opacity-40 flex flex-col`}>
+      <Card
+        className={`h-full hover:shadow-lg transition-all duration-300 group border ${value.borderColor} hover:border-opacity-40 flex flex-col`}
+      >
         <CardContent className="p-6 flex-1 flex flex-col">
-          <div className={`w-12 h-12 rounded-lg ${value.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+          <div
+            className={`w-12 h-12 rounded-lg ${value.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+          >
             <IconComponent className={`w-6 h-6 ${value.color}`} />
           </div>
           <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
@@ -116,13 +132,19 @@ function ValueCard({ value, index }: { value: typeof valueProps[0]; index: numbe
         </CardContent>
       </Card>
     </motion.div>
-  )
+  );
 }
 
-function HighlightCard({ highlight, index }: { highlight: typeof highlights[0]; index: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-  const IconComponent = highlight.icon
+function HighlightCard({
+  highlight,
+  index,
+}: {
+  highlight: (typeof highlights)[0];
+  index: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const IconComponent = highlight.icon;
 
   return (
     <motion.div
@@ -142,15 +164,18 @@ function HighlightCard({ highlight, index }: { highlight: typeof highlights[0]; 
         </CardContent>
       </Card>
     </motion.div>
-  )
+  );
 }
 
 export function ValuePropositionSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="value" className="section-padding bg-gradient-to-br from-background via-muted/20 to-background">
+    <section
+      id="value"
+      className="section-padding bg-gradient-to-br from-background via-muted/20 to-background"
+    >
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -163,11 +188,11 @@ export function ValuePropositionSection() {
             What I Bring to the Table
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Delivering{" "}
-            <span className="gradient-text">Exceptional Value</span>
+            Delivering <span className="gradient-text">Exceptional Value</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Combining technical expertise with proven results to create impactful solutions that drive business success
+            Combining technical expertise with proven results to create
+            impactful solutions that drive business success
           </p>
         </motion.div>
 
@@ -179,7 +204,11 @@ export function ValuePropositionSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {highlights.map((highlight, index) => (
-            <HighlightCard key={highlight.title} highlight={highlight} index={index} />
+            <HighlightCard
+              key={highlight.title}
+              highlight={highlight}
+              index={index}
+            />
           ))}
         </motion.div>
 
@@ -203,7 +232,8 @@ export function ValuePropositionSection() {
                 Ready to Build Something Amazing?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Let's collaborate to bring your vision to life with cutting-edge technology and proven results.
+                Let's collaborate to bring your vision to life with cutting-edge
+                technology and proven results.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="secondary" className="text-sm">
@@ -224,5 +254,5 @@ export function ValuePropositionSection() {
         </motion.div>
       </div>
     </section>
-  )
-} 
+  );
+}
