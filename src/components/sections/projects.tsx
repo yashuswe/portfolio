@@ -8,52 +8,68 @@ import fukuryouScreenshot from "../../assets/fukuryou.png"
 
 const projects = [
   {
-    title: "Cedarwood Educational Platform",
-    description: "Created features to track children's progress on the platform using Next.js, React Query, and TypeScript, enhancing educational monitoring capabilities.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["Next.js", "React Query", "TypeScript", "Education", "Progress Tracking"],
+    title: "Brokerbuk Admin Panel",
+    description: "Deployed new React/TypeScript admin dashboard for real estate management, reducing admin processing time by 20%. Streamlined property listings, user management, and operations.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    tags: ["React", "NestJS", "Admin Dashboard", "PropTech", "Real Estate"],
     links: {
-      demo: "https://cedarwood.co.in/"
+      demo: "https://www.squareboat.com/clients/brokerbuk"
     },
     stats: {
-      users: "10K+",
-      performance: "25%",
-      retention: "40%"
+      users: "Admin Teams",
+      performance: "20%",
+      retention: "Streamlined"
     },
     color: "text-blue-500",
     bgColor: "bg-blue-500/10"
   },
   {
     title: "Fukuryou Real Estate Platform",
-    description: "Built the entire website from scratch for a Japanese real estate platform, improving user retention by 40% through enhanced user experience and modern design.",
+    description: "Led UI overhaul resulting in 40% uplift in user retention and satisfaction. Built entire website from scratch with modern Japanese UI design and full functionality.",
     image: fukuryouScreenshot,
-    tags: ["Full Stack", "React", "SCSS", "Real Estate", "Japanese UI"],
+    tags: ["React", "SCSS", "Real Estate", "Japanese UI", "Full Stack"],
     links: {
       demo: "https://fukuryou.com/"
     },
     stats: {
       users: "50K+",
-      performance: "40%",
-      retention: "60%"
+      performance: "Built 100%",
+      retention: "40% Uplift"
     },
     color: "text-green-500",
     bgColor: "bg-green-500/10"
   },
   {
-    title: "Radiology Platform UI",
-    description: "Built diagnostic interfaces for Singapore's NMH Hospital using Django, Jinja, HTML, and SCSS.",
+    title: "Radiology Platform — Singapore NMH Hospital",
+    description: "Designed and delivered diagnostic UI features enhancing workflow efficiency for medical professionals. Streamlined medical data handling for healthcare system.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["Django", "Healthcare", "SCSS", "Medical Interface", "Hospital System"],
+    tags: ["Django", "Healthcare", "SCSS", "Medical UI", "Hospital System"],
     links: {
       demo: "#"
     },
     stats: {
-      users: "1M+",
-      performance: "30%",
-      retention: "50%"
+      users: "1M+ Patients",
+      performance: "Workflow",
+      retention: "Enhanced"
     },
     color: "text-purple-500",
     bgColor: "bg-purple-500/10"
+  },
+  {
+    title: "Cedarwood Educational Platform",
+    description: "Developed key features for educational platform including student performance tracking and progress monitoring. Raised student engagement metrics by 20%.",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    tags: ["Next.js", "React Query", "TypeScript", "Education", "Progress Tracking"],
+    links: {
+      demo: "https://cedarwood.co.in/"
+    },
+    stats: {
+      users: "10K+ Students",
+      performance: "20%",
+      retention: "Engagement"
+    },
+    color: "text-orange-500",
+    bgColor: "bg-orange-500/10"
   }
 ]
 
@@ -265,7 +281,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

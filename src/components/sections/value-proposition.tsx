@@ -19,7 +19,7 @@ const valueProps = [
   {
     icon: Zap,
     title: "Performance Optimization",
-    description: "Reduced page load times by 39% and API calls by 40% through strategic implementation of React Query and Zustand.",
+    description: "Reduced API response times by 40% and increased development velocity through strategic implementation of React Query and Zustand.",
     color: "text-yellow-500",
     bgColor: "bg-yellow-500/10",
     borderColor: "border-yellow-500/20"
@@ -27,7 +27,7 @@ const valueProps = [
   {
     icon: Target,
     title: "Quality-First Approach",
-    description: "Built comprehensive testing suites with Vitest and Playwright, reducing crash rates and regressions by over 60%.",
+    description: "Achieved 90%+ test coverage with Vitest and Playwright, reducing bug reports by 55% and improving release quality.",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
     borderColor: "border-blue-500/20"
@@ -35,7 +35,7 @@ const valueProps = [
   {
     icon: Users,
     title: "Cross-Functional Collaboration",
-    description: "Led UI revamps and backend development in lean, high-velocity teams, contributing 238+ commits with 54,000+ lines of code.",
+    description: "Led UI rebuilds and facilitated team scaling in lean, high-velocity environments, shipping 94,000+ lines of production code.",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
     borderColor: "border-green-500/20"
@@ -59,7 +59,7 @@ const valueProps = [
   {
     icon: Lightbulb,
     title: "Innovation & Problem Solving",
-    description: "Resolved 300+ UI bugs and enhanced user satisfaction through modern design patterns and intuitive interfaces.",
+    description: "Delivered robust features and enhanced user retention by 40% through modern design patterns, automated testing, and intuitive interfaces.",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     borderColor: "border-orange-500/20"
@@ -74,18 +74,18 @@ const highlights = [
   },
   {
     icon: Rocket,
-    title: "Performance Gains",
-    value: "52% Faster Load Times"
+    title: "Test Coverage",
+    value: "90%+ Achieved"
   },
   {
     icon: Heart,
-    title: "User Satisfaction",
-    value: "60% Bug Reduction"
+    title: "Bug Reduction",
+    value: "55% Decrease"
   },
   {
     icon: Award,
     title: "Code Quality",
-    value: "100K+ Lines of Code Delivered"
+    value: "54K+ Lines Delivered"
   }
 ]
 

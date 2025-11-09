@@ -19,8 +19,8 @@ import {
 
 const experiences = [
   {
-    title: "Software Engineer — Full Stack",
-    company: "a79.ai (US-based AI Startup)",
+    title: "Software Engineer — Front End",
+    company: "AmpUp.ai (US-based AI Startup)",
     period: "Oct 2024 – Present",
     status: "Current",
     icon: Code,
@@ -28,39 +28,39 @@ const experiences = [
     bgColor: "bg-blue-500/10",
     borderColor: "border-blue-500/20",
     highlights: [
-      { metric: "60%", label: "Bug Reduction", icon: Target, color: "text-green-500" },
-      { metric: "39%", label: "Performance Boost", icon: Zap, color: "text-blue-500" },
-      { metric: "300+", label: "Bugs Fixed", icon: Shield, color: "text-purple-500" },
-      { metric: "238+", label: "Commits", icon: GitBranch, color: "text-orange-500" }
+      { metric: "55%", label: "Bug Reduction", icon: Target, color: "text-green-500" },
+      { metric: "90%+", label: "Test Coverage", icon: Shield, color: "text-purple-500" },
+      { metric: "40%", label: "API Response Boost", icon: Zap, color: "text-blue-500" },
+      { metric: "54K+", label: "Lines Delivered", icon: GitBranch, color: "text-orange-500" }
     ],
     achievements: [
       {
-        text: "Led UI revamp with React, TypeScript, shadcn/ui, and React Hooks, reducing visual bugs by 60% and increasing user satisfaction.",
-        highlight: "60%",
+        text: "Rebuilt UI for AmpUp's AI sales enablement platform, increasing development velocity and reducing bug reports by 55% quarter-over-quarter.",
+        highlight: "55%",
         icon: Target
       },
       {
-        text: "Built and maintained frontend testing suites with Vitest and Playwright, lowering crash rates and frontend regressions by over 60%.",
-        highlight: "60%",
+        text: "Planned and executed automated test suite expansion with Vitest and Playwright, achieving 90%+ test coverage and improving release quality for new features.",
+        highlight: "90%+",
         icon: Shield
       },
       {
-        text: "Integrated Zustand and React Query, reducing redundant API calls by 40% and improving average page load time by 39%.",
-        highlight: "39%",
+        text: "Directed implementation of advanced state management using Zustand and React Query for analytics, lowering API response times by 40%.",
+        highlight: "40%",
         icon: Zap
       },
       {
-        text: "Developed backend features with FastAPI and SQLAlchemy, such as secure cascading deletion APIs—leveraging Cursor to ramp up backend development and ensure robust authorization.",
+        text: "Developed backend features with FastAPI and SQLAlchemy, including secure cascading deletion APIs and robust authorization systems.",
         highlight: "FastAPI",
         icon: Code
       },
       {
-        text: "Resolved 300+ UI bugs, driving significant stability and trust in the product.",
-        highlight: "300+",
+        text: "Facilitated onboarding and documentation, empowering rapid team scaling and smoother integration for new engineers.",
+        highlight: "Team Scaling",
         icon: Star
       },
       {
-        text: "Contributed 238+ commits with over 54,000 lines added and 20,000 removed, supporting major features in a lean, high-velocity team.",
+        text: "Shipped over 54,000 lines of production code across full-stack features in a lean, high-velocity startup environment.",
         highlight: "54K+",
         icon: BarChart3
       }
@@ -75,19 +75,19 @@ const experiences = [
     bgColor: "bg-green-500/10",
     borderColor: "border-green-500/20",
     highlights: [
-      { metric: "25%", label: "Performance Gain", icon: Zap, color: "text-green-500" },
-      { metric: "1M+", label: "Patients Served", icon: Users, color: "text-blue-500" },
-      { metric: "56%", label: "Efficiency Boost", icon: Rocket, color: "text-purple-500" }
+      { metric: "15%", label: "Workflow Speed", icon: Zap, color: "text-green-500" },
+      { metric: "1M+", label: "Users Served", icon: Users, color: "text-blue-500" },
+      { metric: "100%", label: "Healthcare Platform", icon: Rocket, color: "text-purple-500" }
     ],
     achievements: [
       {
-        text: "Enhanced application performance by 25% for a healthcare platform serving 1M+ patients.",
-        highlight: "25%",
+        text: "Upgraded performance for patient admission modules in healthtech platform utilized by 1M+ users, contributing to a 15% faster workflow.",
+        highlight: "15%",
         icon: Zap
       },
       {
-        text: "Streamlined workflows and improved patient admission efficiency by 56%, collaborating with cross-disciplinary teams.",
-        highlight: "56%",
+        text: "Collaborated with cross-functional teams to deliver critical healthcare features for Singapore's healthcare system.",
+        highlight: "1M+",
         icon: Rocket
       }
     ]
@@ -101,25 +101,25 @@ const experiences = [
     bgColor: "bg-purple-500/10",
     borderColor: "border-purple-500/20",
     highlights: [
-      { metric: "40%", label: "User Retention", icon: TrendingUp, color: "text-green-500" },
-      { metric: "56%", label: "Localization", icon: Users, color: "text-blue-500" },
-      { metric: "10%", label: "Team Efficiency", icon: Rocket, color: "text-purple-500" }
+      { metric: "40%", label: "Retention Uplift", icon: TrendingUp, color: "text-green-500" },
+      { metric: "100%", label: "Platform Built", icon: Code, color: "text-blue-500" },
+      { metric: "Multilingual", label: "Framework", icon: Users, color: "text-purple-500" }
     ],
     achievements: [
       {
-        text: "Built the entire Fukuryou real estate website from scratch, implementing modern Japanese UI design and functionality.",
+        text: "Led UI overhaul for Fukuryou Real Estate Platform, resulting in 40% uplift in user retention and satisfaction through modern design.",
         highlight: "40%",
         icon: TrendingUp
       },
       {
-        text: "Contributed to localization across multilingual React projects, improving coverage by 56%.",
-        highlight: "56%",
+        text: "Revamped localization framework, improving code maintainability and enabling new language support with minimal dev effort.",
+        highlight: "Framework",
         icon: Users
       },
       {
-        text: "Boosted team collaboration efficiency by 10% through code reusability and documentation.",
-        highlight: "10%",
-        icon: Rocket
+        text: "Built the entire Fukuryou website from scratch, implementing modern Japanese UI design and full-stack functionality.",
+        highlight: "100%",
+        icon: Code
       }
     ]
   },
@@ -132,18 +132,18 @@ const experiences = [
     bgColor: "bg-orange-500/10",
     borderColor: "border-orange-500/20",
     highlights: [
-      { metric: "20%", label: "Customer Satisfaction", icon: Star, color: "text-yellow-500" },
-      { metric: "100%", label: "Platform Revamp", icon: Code, color: "text-blue-500" }
+      { metric: "20%", label: "Engagement Boost", icon: Star, color: "text-yellow-500" },
+      { metric: "100%", label: "Platform Shipped", icon: Code, color: "text-blue-500" }
     ],
     achievements: [
       {
-        text: "Built responsive interfaces alongside UI/UX teams, raising customer satisfaction scores by 20%.",
+        text: "Built and shipped responsive educational interfaces, raising student engagement metrics by 20% in subsequent release.",
         highlight: "20%",
         icon: Star
       },
       {
-        text: "Revamped educational platform frontend and added student performance tracking for cedarwood.co.in.",
-        highlight: "100%",
+        text: "Developed key features for Cedarwood educational platform including student performance tracking and progress monitoring capabilities.",
+        highlight: "Platform",
         icon: Code
       }
     ]

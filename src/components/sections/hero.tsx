@@ -103,8 +103,8 @@ export function HeroSection() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              Passionate about building scalable web applications with modern technologies. 
-              Currently leading UI revamps and backend development at a79.ai, with expertise in React, TypeScript, and FastAPI.
+              Results-driven Full-Stack Engineer skilled in scalable UI design, automated testing, and modern JavaScript frameworks. 
+              Passionate about enhancing user experience, improving release velocity, and building robust web applications.
             </motion.p>
 
             <motion.div
