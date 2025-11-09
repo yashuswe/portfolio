@@ -13,7 +13,6 @@ import {
   ExternalLink,
   Github,
   Eye,
-  Code,
   Zap,
   Users,
   TrendingUp,

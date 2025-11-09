@@ -16,7 +16,6 @@ import { ConfettiButton } from "../ui/confetti-button";
 import { TechTicker } from "../ui/tech-ticker";
 
 export function HeroSection() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
   const mouseX = useMotionValue(0);
@@ -39,7 +38,6 @@ export function HeroSection() {
 
       mouseX.set(x);
       mouseY.set(y);
-      setMousePosition({ x: clientX, y: clientY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);

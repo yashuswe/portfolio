@@ -1,9 +1,8 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 import {
-  CheckCircle,
   TrendingUp,
   Zap,
   Users,
@@ -219,7 +218,6 @@ function ExperienceCard({
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [isExpanded, setIsExpanded] = useState(false);
   const IconComponent = experience.icon;
 
   return (

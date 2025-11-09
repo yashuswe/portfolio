@@ -235,7 +235,6 @@ export default function Personal() {
             className="grid grid-cols-2 md:grid-cols-3 gap-4"
           >
             {interests.map((interest, index) => {
-              const IconComponent = interest.icon;
               return (
                 <motion.div
                   key={interest.label}
