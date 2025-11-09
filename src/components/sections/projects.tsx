@@ -8,6 +8,23 @@ import fukuryouScreenshot from "../../assets/fukuryou.png"
 
 const projects = [
   {
+    title: "PDF Editing SaaS Platform",
+    description: "Building a modern PDF editing SaaS from the ground up as Designer & Front-End Engineer. Architecting modular, block-based interface with intuitive UX and powerful editing capabilities.",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    tags: ["React", "TypeScript", "SaaS", "UI/UX Design", "Freelance", "Current"],
+    links: {
+      demo: "#"
+    },
+    stats: {
+      users: "In Development",
+      performance: "SaaS",
+      retention: "Ongoing"
+    },
+    color: "text-purple-500",
+    bgColor: "bg-purple-500/10",
+    badge: "Current Project"
+  },
+  {
     title: "Brokerbuk Admin Panel",
     description: "Deployed new React/TypeScript admin dashboard for real estate management, reducing admin processing time by 20%. Streamlined property listings, user management, and operations.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
@@ -138,6 +155,19 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
+          {/* Current Project Badge */}
+          {project.badge && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="absolute top-3 left-3 z-10"
+            >
+              <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 shadow-lg">
+                {project.badge}
+              </Badge>
+            </motion.div>
+          )}
+          
           {/* Project Stats Overlay */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,27 +196,33 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             whileHover={{ opacity: 1, y: 0 }}
             className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            {Object.entries(project.links).map(([key, url]) => (
-              <motion.div
-                key={key}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  className="backdrop-blur-sm bg-white/90 text-black hover:bg-white"
-                  onClick={() => window.open(url, '_blank')}
+            {project.badge === "Current Project" ? (
+              <Badge className="backdrop-blur-sm bg-white/90 text-black border-0 px-4 py-2 text-sm font-semibold">
+                🚧 In Development
+              </Badge>
+            ) : (
+              Object.entries(project.links).map(([key, url]) => (
+                <motion.div
+                  key={key}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {key === 'github' ? (
-                    <Github className="h-4 w-4 mr-2" />
-                  ) : (
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                  )}
-                  {key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}
-                </Button>
-              </motion.div>
-            ))}
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    className="backdrop-blur-sm bg-white/90 text-black hover:bg-white"
+                    onClick={() => window.open(url, '_blank')}
+                  >
+                    {key === 'github' ? (
+                      <Github className="h-4 w-4 mr-2" />
+                    ) : (
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                    )}
+                    {key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}
+                  </Button>
+                </motion.div>
+              ))
+            )}
           </motion.div>
         </div>
         
