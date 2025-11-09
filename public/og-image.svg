@@ -1,0 +1,85 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4FACFE;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.3" />
+      <stop offset="70%" style="stop-color:#8B5CF6;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4FACFE;stop-opacity:0.2" />
+      <stop offset="70%" style="stop-color:#4FACFE;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative Glows -->
+  <circle cx="1000" cy="100" r="250" fill="url(#glow1)"/>
+  <circle cx="200" cy="530" r="200" fill="url(#glow2)"/>
+  
+  <!-- Badge -->
+  <rect x="80" y="120" width="240" height="40" rx="20" fill="rgba(139, 92, 246, 0.2)" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="200" y="146" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#a78bfa" text-anchor="middle">✨ Full Stack Engineer</text>
+  
+  <!-- Name -->
+  <text x="80" y="230" font-family="Inter, -apple-system, sans-serif" font-size="72" font-weight="800" fill="url(#textGradient)">Yashassvi Suhane</text>
+  
+  <!-- Title -->
+  <text x="80" y="290" font-family="Inter, -apple-system, sans-serif" font-size="42" font-weight="600" fill="#e0e0e0">Building Scalable Web Applications</text>
+  
+  <!-- Description -->
+  <text x="80" y="345" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#a0a0a0">Results-driven engineer specializing in React, TypeScript &amp; FastAPI.</text>
+  <text x="80" y="380" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#a0a0a0">Achieved 90%+ test coverage &amp; 55% bug reduction at AmpUp.ai</text>
+  
+  <!-- Stats -->
+  <g id="stats">
+    <!-- Stat 1 -->
+    <g>
+      <text x="80" y="460" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#textGradient)">90%+</text>
+      <text x="80" y="490" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#808080">Test Coverage</text>
+    </g>
+    
+    <!-- Stat 2 -->
+    <g>
+      <text x="280" y="460" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#textGradient)">54K+</text>
+      <text x="280" y="490" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#808080">Lines Delivered</text>
+    </g>
+    
+    <!-- Stat 3 -->
+    <g>
+      <text x="480" y="460" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#textGradient)">55%</text>
+      <text x="480" y="490" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#808080">Bug Reduction</text>
+    </g>
+  </g>
+  
+  <!-- Footer Line -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="rgba(139, 92, 246, 0.2)" stroke-width="2"/>
+  
+  <!-- Footer - URL -->
+  <text x="80" y="575" font-family="Inter, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#a78bfa">portfolio-teal-ten-95.vercel.app</text>
+  
+  <!-- Footer - Tech Stack -->
+  <g id="tech-stack">
+    <rect x="900" y="550" width="90" height="36" rx="18" fill="rgba(139, 92, 246, 0.15)"/>
+    <text x="945" y="573" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#c4b5fd" text-anchor="middle">React</text>
+    
+    <rect x="1000" y="550" width="100" height="36" rx="18" fill="rgba(139, 92, 246, 0.15)"/>
+    <text x="1050" y="573" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#c4b5fd" text-anchor="middle">TypeScript</text>
+  </g>
+</svg>
+

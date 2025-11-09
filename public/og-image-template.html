@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .og-card {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+        
+        /* Decorative elements */
+        .og-card::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+        
+        .og-card::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            border-radius: 50%;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(139, 92, 246, 0.2);
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 30px;
+            font-size: 18px;
+            color: #a78bfa;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #8B5CF6 0%, #4FACFE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .title {
+            font-size: 42px;
+            color: #e0e0e0;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            font-size: 24px;
+            color: #a0a0a0;
+            max-width: 900px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #8B5CF6 0%, #4FACFE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #808080;
+            font-weight: 500;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 2px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .url {
+            font-size: 20px;
+            color: #a78bfa;
+            font-weight: 600;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+        }
+        
+        .tech-item {
+            padding: 6px 16px;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 20px;
+            color: #c4b5fd;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-card">
+        <div class="content">
+            <div class="badge">✨ Full Stack Engineer</div>
+            <div class="name">Yashassvi Suhane</div>
+            <div class="title">Building Scalable Web Applications</div>
+            <div class="description">
+                Results-driven engineer specializing in React, TypeScript & FastAPI.
+                Achieved 90%+ test coverage & 55% bug reduction at AmpUp.ai
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">90%+</div>
+                    <div class="stat-label">Test Coverage</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">54K+</div>
+                    <div class="stat-label">Lines Delivered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">55%</div>
+                    <div class="stat-label">Bug Reduction</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="url">portfolio-teal-ten-95.vercel.app</div>
+            <div class="tech-stack">
+                <span class="tech-item">React</span>
+                <span class="tech-item">TypeScript</span>
+                <span class="tech-item">FastAPI</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
