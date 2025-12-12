@@ -10,6 +10,7 @@ import Personal from "../components/sections/personal";
 import { ContactSection } from "../components/sections/contact";
 import { Footer } from "../components/ui/footer";
 import { TechJourney } from "../components/ui/tech-journey";
+import { GitHubContributions } from "../components/sections/github-contributions";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <ValuePropositionSection />
         <ExperienceSection />
         <TechJourney />
+        <GitHubContributions />
         <ProjectsSection />
         <EducationSection />
         <Personal />
