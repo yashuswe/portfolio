@@ -28,12 +28,6 @@ const experiences = [
     borderColor: "border-blue-500/20",
     highlights: [
       {
-        metric: "55%",
-        label: "Bug Reduction",
-        icon: Target,
-        color: "text-green-500",
-      },
-      {
         metric: "90%+",
         label: "Test Coverage",
         icon: Shield,
@@ -54,9 +48,9 @@ const experiences = [
     ],
     achievements: [
       {
-        text: "Rebuilt UI for AmpUp's AI sales enablement platform, increasing development velocity and reducing bug reports by 55% quarter-over-quarter.",
-        highlight: "55%",
-        icon: Target,
+        text: "Rebuilt UI for AmpUp's AI sales enablement platform, improving development velocity and release quality quarter-over-quarter.",
+        highlight: "release quality",
+        icon: Rocket,
       },
       {
         text: "Planned and executed automated test suite expansion with Vitest and Playwright, achieving 90%+ test coverage and improving release quality for new features.",

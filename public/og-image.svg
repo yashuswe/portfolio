@@ -44,7 +44,7 @@
   
   <!-- Description -->
   <text x="80" y="345" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#a0a0a0">Results-driven engineer specializing in React, TypeScript &amp; FastAPI.</text>
-  <text x="80" y="380" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#a0a0a0">Achieved 90%+ test coverage &amp; 55% bug reduction at AmpUp.ai</text>
+  <text x="80" y="380" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#a0a0a0">Achieved 90%+ test coverage at AmpUp.ai</text>
   
   <!-- Stats -->
   <g id="stats">
@@ -62,8 +62,8 @@
     
     <!-- Stat 3 -->
     <g>
-      <text x="480" y="460" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#textGradient)">55%</text>
-      <text x="480" y="490" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#808080">Bug Reduction</text>
+      <text x="480" y="460" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#textGradient)">24+</text>
+      <text x="480" y="490" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#808080">Projects Delivered</text>
     </g>
   </g>
   

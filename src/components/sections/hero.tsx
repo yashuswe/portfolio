@@ -281,7 +281,7 @@ export function HeroSection() {
                     </motion.div>
                     <div className="text-sm text-muted-foreground flex items-center justify-center gap-2">
                       <Target className="w-4 h-4" />
-                      Bug Reduction
+                      Release Quality
                     </div>
                   </div>
                 </Card>

@@ -35,7 +35,7 @@ const projects = [
       "Current",
     ],
     links: {
-      demo: "#",
+      demo: "https://staging.pdfbharat.com/",
     },
     stats: {
       users: "In Development",
@@ -71,7 +71,7 @@ const projects = [
     image: fukuryouScreenshot,
     tags: ["React", "SCSS", "Real Estate", "Japanese UI", "Full Stack"],
     links: {
-      demo: "https://fukuryou.com/",
+      demo: "https://www.fukuryou.co.jp/sakado/",
     },
     stats: {
       users: "50K+",
@@ -80,24 +80,6 @@ const projects = [
     },
     color: "text-green-500",
     bgColor: "bg-green-500/10",
-  },
-  {
-    title: "Radiology Platform — Singapore NMH Hospital",
-    description:
-      "Designed and delivered diagnostic UI features enhancing workflow efficiency for medical professionals. Streamlined medical data handling for healthcare system.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["Django", "Healthcare", "SCSS", "Medical UI", "Hospital System"],
-    links: {
-      demo: "#",
-    },
-    stats: {
-      users: "1M+ Patients",
-      performance: "Workflow",
-      retention: "Enhanced",
-    },
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
   },
   {
     title: "Cedarwood Educational Platform",
@@ -145,6 +127,16 @@ function ProjectCard({
   const springConfig = { damping: 20, stiffness: 300 };
   const springRotateX = useSpring(rotateX, springConfig);
   const springRotateY = useSpring(rotateY, springConfig);
+
+  const handleEyeClick = () => {
+    if (!project.links) return;
+    const primaryLink =
+      (project.links as Record<string, string>).demo ??
+      Object.values(project.links as Record<string, string>)[0];
+    if (primaryLink) {
+      window.open(primaryLink, "_blank");
+    }
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isHovered) return;
@@ -281,9 +273,10 @@ function ProjectCard({
               {project.title}
             </h3>
             <motion.div
-              className={`w-8 h-8 rounded-full ${project.bgColor} flex items-center justify-center`}
+              className={`w-8 h-8 rounded-full ${project.bgColor} flex items-center justify-center cursor-pointer`}
               whileHover={{ scale: 1.2, rotate: 360 }}
               transition={{ duration: 0.3 }}
+              onClick={handleEyeClick}
             >
               <Eye className={`w-4 h-4 ${project.color}`} />
             </motion.div>

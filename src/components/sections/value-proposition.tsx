@@ -29,7 +29,7 @@ const valueProps = [
     icon: Target,
     title: "Quality-First Approach",
     description:
-      "Achieved 90%+ test coverage with Vitest and Playwright, reducing bug reports by 55% and improving release quality.",
+      "Achieved 90%+ test coverage with Vitest and Playwright, improving release confidence and overall quality.",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
     borderColor: "border-blue-500/20",
@@ -69,29 +69,6 @@ const valueProps = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     borderColor: "border-orange-500/20",
-  },
-];
-
-const highlights = [
-  {
-    icon: Code,
-    title: "Full-Stack Expertise",
-    value: "React to FastAPI",
-  },
-  {
-    icon: Rocket,
-    title: "Test Coverage",
-    value: "90%+ Achieved",
-  },
-  {
-    icon: Heart,
-    title: "Bug Reduction",
-    value: "55% Decrease",
-  },
-  {
-    icon: Award,
-    title: "Code Quality",
-    value: "54K+ Lines Delivered",
   },
 ];
 
@@ -135,37 +112,6 @@ function ValueCard({
   );
 }
 
-function HighlightCard({
-  highlight,
-  index,
-}: {
-  highlight: (typeof highlights)[0];
-  index: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const IconComponent = highlight.icon;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="h-full"
-    >
-      <Card className="text-center hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
-        <CardContent className="p-6 flex-1 flex flex-col justify-center">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-            <IconComponent className="w-8 h-8 text-primary" />
-          </div>
-          <h4 className="text-lg font-semibold mb-2">{highlight.title}</h4>
-          <p className="text-2xl font-bold text-primary">{highlight.value}</p>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-}
 
 export function ValuePropositionSection() {
   const ref = useRef(null);
@@ -194,22 +140,6 @@ export function ValuePropositionSection() {
             Combining technical expertise with proven results to create
             impactful solutions that drive business success
           </p>
-        </motion.div>
-
-        {/* Key Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          {highlights.map((highlight, index) => (
-            <HighlightCard
-              key={highlight.title}
-              highlight={highlight}
-              index={index}
-            />
-          ))}
         </motion.div>
 
         {/* Value Propositions */}
